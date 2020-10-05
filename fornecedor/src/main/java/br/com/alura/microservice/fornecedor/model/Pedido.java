@@ -1,5 +1,9 @@
 package br.com.alura.microservice.fornecedor.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +17,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Pedido {
 	
 	@Id
@@ -31,40 +38,5 @@ public class Pedido {
 	public Pedido(List<PedidoItem> itens) {
 		this.itens = itens;
 		this.status = PedidoStatus.RECEBIDO;
-	}
-	
-	public Pedido() {
-	}
-
-	public List<PedidoItem> getItens() {
-		return itens;
-	}
-
-	public void setItens(List<PedidoItem> itens) {
-		this.itens = itens;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public PedidoStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(PedidoStatus status) {
-		this.status = status;
-	}
-
-	public Integer getTempoDePreparo() {
-		return tempoDePreparo;
-	}
-
-	public void setTempoDePreparo(Integer tempoDePreparo) {
-		this.tempoDePreparo = tempoDePreparo;
 	}
 }
