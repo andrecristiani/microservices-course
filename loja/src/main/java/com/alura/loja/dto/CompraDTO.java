@@ -1,9 +1,13 @@
 package com.alura.loja.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 public class CompraDTO {
 
     @JsonIgnore
@@ -12,28 +16,4 @@ public class CompraDTO {
     private List<ItemDaCompraDTO> itens;
 
     private EnderecoDTO endereco;
-
-    public Long getCompraId() {
-        return compraId;
-    }
-
-    public void setCompraId(Long compraId) {
-        this.compraId = compraId;
-    }
-
-    public List<ItemDaCompraDTO> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<ItemDaCompraDTO> itens) {
-        this.itens = itens;
-    }
-
-    public EnderecoDTO getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(EnderecoDTO endereco) {
-        this.endereco = endereco;
-    }
 }

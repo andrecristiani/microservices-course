@@ -1,8 +1,13 @@
 package com.alura.loja.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
 public class Compra {
 
@@ -22,60 +27,4 @@ public class Compra {
 
     @Enumerated(EnumType.STRING)
     private CompraState state;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getPedidoId() {
-        return pedidoId;
-    }
-
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
-    }
-
-    public Integer getTempoDePreparo() {
-        return tempoDePreparo;
-    }
-
-    public void setTempoDePreparo(Integer tempoDePreparo) {
-        this.tempoDePreparo = tempoDePreparo;
-    }
-
-    public String getEnderecoDestino() {
-        return enderecoDestino;
-    }
-
-    public void setEnderecoDestino(String enderecoDestino) {
-        this.enderecoDestino = enderecoDestino;
-    }
-
-    public LocalDate getDataPraEntrega() {
-        return dataPraEntrega;
-    }
-
-    public void setDataPraEntrega(LocalDate dataPraEntrega) {
-        this.dataPraEntrega = dataPraEntrega;
-    }
-
-    public Long getVoucher() {
-        return voucher;
-    }
-
-    public void setVoucher(Long voucher) {
-        this.voucher = voucher;
-    }
-
-    public CompraState getState() {
-        return state;
-    }
-
-    public void setState(CompraState state) {
-        this.state = state;
-    }
 }

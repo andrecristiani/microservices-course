@@ -64,8 +64,6 @@ public class CompraService {
         compraSalva.setVoucher(voucher.getNumero());
         compraRepository.save(compraSalva);
 
-        compraRepository.save(compraSalva);
-
         return compraSalva;
     }
 

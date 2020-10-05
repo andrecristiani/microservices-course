@@ -1,7 +1,12 @@
 package com.alura.loja.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Getter
+@Setter
 public class InfoEntregaDTO {
     private Long pedidoId;
 
@@ -10,36 +15,4 @@ public class InfoEntregaDTO {
     private String enderecoOrigem;
 
     private String enderecoDestino;
-
-    public Long getPedidoId() {
-        return pedidoId;
-    }
-
-    public void setPedidoId(Long pedidoId) {
-        this.pedidoId = pedidoId;
-    }
-
-    public LocalDate getDataParaEntrega() {
-        return dataParaEntrega;
-    }
-
-    public void setDataParaEntrega(LocalDate dataParaEntrega) {
-        this.dataParaEntrega = dataParaEntrega;
-    }
-
-    public String getEnderecoOrigem() {
-        return enderecoOrigem;
-    }
-
-    public void setEnderecoOrigem(String enderecoOrigem) {
-        this.enderecoOrigem = enderecoOrigem;
-    }
-
-    public String getEnderecoDestino() {
-        return enderecoDestino;
-    }
-
-    public void setEnderecoDestino(String enderecoDestino) {
-        this.enderecoDestino = enderecoDestino;
-    }
 }
