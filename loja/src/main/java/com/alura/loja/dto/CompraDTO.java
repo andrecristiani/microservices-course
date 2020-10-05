@@ -1,11 +1,25 @@
 package com.alura.loja.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class CompraDTO {
+
+    @JsonIgnore
+    private Long compraId;
+
     private List<ItemDaCompraDTO> itens;
 
     private EnderecoDTO endereco;
+
+    public Long getCompraId() {
+        return compraId;
+    }
+
+    public void setCompraId(Long compraId) {
+        this.compraId = compraId;
+    }
 
     public List<ItemDaCompraDTO> getItens() {
         return itens;
