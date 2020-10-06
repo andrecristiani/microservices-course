@@ -1,5 +1,6 @@
 package br.com.alura.microservice.transportador.service;
 
+import br.com.alura.microservice.transportador.producers.FornecedorProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class EntregaService {
 	
 	@Autowired
 	private EntregaRepository repository;
+
+	@Autowired
+	private FornecedorProducer fornecedorProducer;
 
 	public VoucherDTO reservaEntrega(EntregaDTO pedidoDTO) {
 		
@@ -28,6 +32,9 @@ public class EntregaService {
 		VoucherDTO voucher = new VoucherDTO();
 		voucher.setNumero(entrega.getId());
 		voucher.setPrevisaoParaEntrega(entrega.getPrevisaoParaEntrega());
+
+		fornecedorProducer.send(voucher);
+
 		return voucher;
 	}
 

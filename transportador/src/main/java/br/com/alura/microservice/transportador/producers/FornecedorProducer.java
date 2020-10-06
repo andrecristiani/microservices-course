@@ -1,6 +1,6 @@
-package com.alura.loja.producers;
+package br.com.alura.microservice.transportador.producers;
 
-import com.alura.loja.dto.InfoFornecedorDTO;
+import br.com.alura.microservice.transportador.dto.VoucherDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
@@ -20,8 +20,8 @@ public class FornecedorProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void send(final @RequestBody InfoFornecedorDTO infoFornecedorDTO) {
+    public void send(final @RequestBody VoucherDTO voucher) {
         final String messageKey = UUID.randomUUID().toString();
-        kafkaTemplate.send(infoFornecedorTopic, messageKey, infoFornecedorDTO);
+        kafkaTemplate.send(infoFornecedorTopic, messageKey, voucher);
     }
 }
